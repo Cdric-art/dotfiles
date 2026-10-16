@@ -21,7 +21,7 @@ repris d'Omarchy.
 | Dossier du dépôt | Destination | Contenu |
 |---|---|---|
 | `home/` | `~/` | `.bashrc`, `.bash_profile`, `.gtkrc-2.0` |
-| `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua), hyprlock, hyprpaper |
+| `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua), hyprlock (capture du bureau floutée), hyprpaper |
 | `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi |
 | `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
 | `config/mako/` | `~/.config/mako/` | Notifications |
@@ -41,11 +41,11 @@ repris d'Omarchy.
 | `local/share/color-schemes/Ghost.colors` | `~/.local/share/color-schemes/` | Jeu de couleurs KDE |
 | `local/share/org.kde.syntax-highlighting/themes/ghost.theme` | `~/.local/share/…` | Thème de l'éditeur Kate |
 | `icons/default/index.theme` | `~/.icons/default/` | Curseur Breeze partout |
-| `wallpapers/` | `~/Pictures/` | Fond d'écran |
+| `wallpapers/` | `~/Pictures/` | Un fond d'écran Ghost (à adapter dans `hyprpaper.conf`) |
 | `system/etc/portage/` | `/etc/portage/` | `make.conf`, `package.*`, dépôts (guru, hyproverlay), binhost |
 | `system/etc/sddm.conf.d/zz-ghost.conf` | `/etc/sddm.conf.d/` | Thème SDDM + curseur |
 | `system/etc/pam.d/sddm` | `/etc/pam.d/` | KWallet déverrouillé au login (GNOME Keyring désactivé) |
-| `system/usr/share/sddm/themes/ghost/` | `/usr/share/sddm/themes/` | Thème SDDM Ghost (QML) |
+| `system/usr/share/sddm/themes/ghost/` | `/usr/share/sddm/themes/` | Thème SDDM Ghost (QML, fond noir uni) |
 
 ## Installation
 

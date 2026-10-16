@@ -1,6 +1,5 @@
 // SDDM — thème Ghost Pastel (https://omarchytheme.com/themes/ghost-pastel)
 import QtQuick
-import QtQuick.Effects
 import SddmComponents 2.0
 
 Rectangle {
@@ -38,22 +37,7 @@ Rectangle {
     function onLoginSucceeded() { root.loginFailed = false }
   }
 
-  // Fond flouté et assombri (comme hyprlock)
-  Image {
-    id: bg
-    anchors.fill: parent
-    source: config.background
-    fillMode: Image.PreserveAspectCrop
-    visible: false
-  }
-  MultiEffect {
-    anchors.fill: bg
-    source: bg
-    blurEnabled: true
-    blurMax: 48
-    blur: 0.6
-    brightness: -0.4
-  }
+  // Fond : noir Ghost uni (couleur du Rectangle racine)
 
   Timer {
     interval: 1000; running: true; repeat: true; triggeredOnStart: true

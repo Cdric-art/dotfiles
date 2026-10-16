@@ -17,7 +17,6 @@ configuration {
 
     background-color:   transparent;
     text-color:         @fg0;
-
     margin:     0px;
     padding:    0px;
     spacing:    0px;
@@ -25,9 +24,8 @@ configuration {
 
 window {
     location:       center;
-    width:          480;
+    width:          300;
     border-radius:  0px;
-
     border: 1px;
     border-color: @bg3;
     background-color:   @bg0;
@@ -73,7 +71,7 @@ listview {
     background-color:   transparent;
     margin:     12px 0 0;
     columns:    1;
-    lines:      1;
+    lines:      10;
 
     fixed-height: false;
 }
