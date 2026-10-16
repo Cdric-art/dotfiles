@@ -30,6 +30,7 @@ tooltip label { color: @fg; }
 #custom-menu,
 #workspaces button,
 #clock,
+#idle_inhibitor,
 #mpris,
 #tray,
 #network,
@@ -66,6 +67,9 @@ tooltip label { color: @fg; }
 #clock { font-weight: bold; }
 #mpris { color: @magenta; }
 
+#idle_inhibitor { color: @muted; }
+#idle_inhibitor.activated { color: @accent; }
+
 #pulseaudio.mic.muted { color: @fg; }
 
 #network.disconnected,
@@ -78,6 +82,7 @@ tooltip label { color: @fg; }
 #custom-power { color: @red; padding: 0 12px; }
 
 #custom-menu:hover,
+#idle_inhibitor:hover,
 #network:hover,
 #pulseaudio:hover,
 #pulseaudio.mic:hover,

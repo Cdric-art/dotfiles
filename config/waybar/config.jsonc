@@ -6,7 +6,7 @@
   "spacing": 0,
 
   "modules-left": ["custom/menu", "hyprland/workspaces"],
-  "modules-center": ["clock", "mpris"],
+  "modules-center": ["clock", "idle_inhibitor", "mpris"],
   "modules-right": ["tray", "pulseaudio", "pulseaudio#mic", "cpu", "memory", "custom/power"],
 
   "custom/menu": {
@@ -37,6 +37,13 @@
         "today": "<span color='#979fec'><b><u>{}</u></b></span>"
       }
     }
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": { "deactivated": "", "activated": "" },
+    "tooltip-format-deactivated": "Verrouillage auto : activé (5 min)",
+    "tooltip-format-activated": "Verrouillage auto : désactivé"
   },
 
   "mpris": {

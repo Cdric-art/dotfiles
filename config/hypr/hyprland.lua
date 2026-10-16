@@ -47,7 +47,7 @@ local menu = "rofi -show drun"
 hl.on("hyprland.start", function()
 	--   hl.exec_cmd(terminal)
 	--   hl.exec_cmd("nm-applet")
-	hl.exec_cmd("waybar & hyprpaper & mako")
+	hl.exec_cmd("waybar & hyprpaper & mako & hypridle")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 	-- Déverrouille KWallet avec le mot de passe de session (PAM)

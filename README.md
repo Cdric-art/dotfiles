@@ -21,7 +21,7 @@ repris d'Omarchy.
 | Dossier du dépôt | Destination | Contenu |
 |---|---|---|
 | `home/` | `~/` | `.bashrc`, `.bash_profile`, `.gtkrc-2.0` |
-| `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua), hyprlock (capture du bureau floutée), hyprpaper |
+| `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua), hyprlock (capture du bureau floutée), hypridle, hyprpaper |
 | `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi |
 | `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
 | `config/mako/` | `~/.config/mako/` | Notifications |
@@ -86,6 +86,15 @@ et copiée dans le presse-papier.
 | `Super+Ctrl+S` | Zone à sélectionner |
 | `Super+Ctrl+W` | Fenêtre |
 | `Super+Ctrl+F` | Écran entier |
+
+## Verrouillage automatique
+
+`hypridle` verrouille l'écran avec hyprlock après **5 min** d'inactivité et
+l'éteint après **30 min**. Il verrouille aussi avant une mise en veille.
+
+Le bouton à droite de l'heure dans la Waybar (`idle_inhibitor`) le met en pause :
+cadenas gris = verrouillage actif, tasse violette = désactivé (pour lire, regarder
+une vidéo…). Il revient à « actif » à chaque nouvelle session.
 
 ## Notes
 
