@@ -34,6 +34,7 @@ tooltip label { color: @fg; }
 #tray,
 #network,
 #pulseaudio,
+#pulseaudio.mic,
 #cpu,
 #memory,
 #custom-power {
@@ -65,8 +66,11 @@ tooltip label { color: @fg; }
 #clock { font-weight: bold; }
 #mpris { color: @magenta; }
 
+#pulseaudio.mic.muted { color: @fg; }
+
 #network.disconnected,
-#pulseaudio.muted { color: @muted; }
+#pulseaudio.muted,
+#pulseaudio.mic.source-muted { color: @muted; }
 
 #cpu.warning,  #memory.warning  { color: @pink; }
 #cpu.critical, #memory.critical { color: @red; }
@@ -76,6 +80,7 @@ tooltip label { color: @fg; }
 #custom-menu:hover,
 #network:hover,
 #pulseaudio:hover,
+#pulseaudio.mic:hover,
 #cpu:hover,
 #memory:hover,
 #custom-power:hover {

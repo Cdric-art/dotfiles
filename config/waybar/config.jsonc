@@ -7,7 +7,7 @@
 
   "modules-left": ["custom/menu", "hyprland/workspaces"],
   "modules-center": ["clock", "mpris"],
-  "modules-right": ["tray", "pulseaudio", "cpu", "memory", "custom/power"],
+  "modules-right": ["tray", "pulseaudio", "pulseaudio#mic", "cpu", "memory", "custom/power"],
 
   "custom/menu": {
     "format": "",
@@ -64,6 +64,16 @@
     "scroll-step": 5,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "tooltip-format": "{desc}"
+  },
+
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+    "tooltip-format": "{source_desc}"
   },
 
   "cpu": {
