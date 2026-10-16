@@ -70,11 +70,22 @@ sudo cp -r system/usr/. /usr/
 
 Hyprland (`gui-wm/hyprland`, dépôt hyproverlay), `hyprlock`, `hypridle`, `hyprpaper`,
 `hyprpolkitagent`, `xdg-desktop-portal-hyprland`, `waybar` (USE `tray network mpris`),
-`rofi-wayland`, `mako`, `kitty`, `btop`, `yazi`, `fastfetch`, `starship`, `zoxide`, `eza`,
+`rofi-wayland`, `mako`, `hyprshot` (captures, avec `grim` et `slurp`), `kitty`, `btop`, `yazi`, `fastfetch`, `starship`, `zoxide`, `eza`,
 `neovim`, `zed`, SDDM, PipeWire/WirePlumber, KWallet (`kwallet-pam`), Breeze
 (curseur, `breeze-gtk`, `plasma-integration`), Dolphin, Kate, Okular, Firefox.
 
 Polices : Fira Code, Geist, Symbols Nerd Font, Noto.
+
+## Captures d'écran
+
+Avec `hyprshot`. Chaque capture est enregistrée dans `~/Pictures/Screenshots`
+et copiée dans le presse-papier.
+
+| Raccourci | Capture |
+|---|---|
+| `Super+Ctrl+S` | Zone à sélectionner |
+| `Super+Ctrl+W` | Fenêtre |
+| `Super+Ctrl+F` | Écran entier |
 
 ## Notes
 

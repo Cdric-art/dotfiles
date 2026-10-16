@@ -1,11 +1,13 @@
 [Added Associations]
 application/pdf=mupdf.desktop;
+image/jpeg=imv-dir.desktop;imv.desktop;
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/kdrive=kDrive.desktop;
 
 [Default Applications]
 application/pdf=mupdf.desktop;
 application/xhtml+xml=firefox-bin.desktop
+image/jpeg=imv-dir.desktop;
 text/html=firefox-bin.desktop
 x-scheme-handler/about=firefox-bin.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
