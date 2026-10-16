@@ -1,0 +1,9 @@
+# Sauvegardes locales
+*.bak
+*.bak-*
+*~
+
+# Ne jamais versionner de secrets
+.ssh/
+*.kwl
+*.keyring

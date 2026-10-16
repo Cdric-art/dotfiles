@@ -1,0 +1,4 @@
+sys-apps/systemd boot
+sys-kernel/installkernel dracut systemd-boot
+x11-drivers/nvidia-drivers kernel-open
+media-video/pipewire sound-server

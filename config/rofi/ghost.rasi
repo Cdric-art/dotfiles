@@ -1,0 +1,19 @@
+/* Ghost Pastel — https://omarchytheme.com/themes/ghost-pastel */
+* {
+  bg0     : #070506;
+  bg1     : #120e10;
+  bg2     : #2a2228;
+  bg3     : #836f79;
+  fg0     : #ffffff;
+  fg1     : #e4e6fb;
+  fg2     : #836f79;
+  red     : #b37580;
+  green   : #648ed0;
+  yellow  : #e095b5;
+  blue    : #979fec;
+  magenta : #cd9dcf;
+  cyan    : #7c93dd;
+
+  accent: @blue;
+  urgent: @yellow;
+}

@@ -1,0 +1,26 @@
+# mako — thème Ghost Pastel (https://omarchytheme.com/themes/ghost-pastel)
+font=Fira Code 10
+background-color=#070506
+text-color=#ffffff
+border-color=#979fec
+progress-color=over #979fec
+border-size=1
+border-radius=0
+padding=10
+margin=10
+width=360
+height=150
+icon-path=/home/cdrc/.local/share/icons/Tela-dark
+max-icon-size=32
+default-timeout=5000
+anchor=top-right
+layer=overlay
+max-visible=5
+
+[urgency=low]
+border-color=#836f79
+text-color=#c3cef2
+
+[urgency=critical]
+border-color=#b37580
+default-timeout=0

@@ -1,0 +1,83 @@
+/* Waybar — thème Ghost Pastel (https://omarchytheme.com/themes/ghost-pastel) */
+@define-color bg      #070506;
+@define-color fg      #ffffff;
+@define-color accent  #979fec;
+@define-color muted   #836f79;
+@define-color red     #b37580;
+@define-color pink    #e095b5;
+@define-color magenta #cd9dcf;
+@define-color cyan    #7c93dd;
+
+* {
+    font-family: "Fira Code", "Symbols Nerd Font";
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @bg;
+    color: @fg;
+}
+
+tooltip {
+    background: @bg;
+    border: 1px solid @accent;
+}
+tooltip label { color: @fg; }
+
+#custom-menu,
+#workspaces button,
+#clock,
+#mpris,
+#tray,
+#network,
+#pulseaudio,
+#cpu,
+#memory,
+#custom-power {
+    padding: 0 10px;
+    color: @fg;
+    background: transparent;
+}
+
+#custom-menu {
+    color: @accent;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @muted;
+    box-shadow: none;
+    text-shadow: none;
+}
+#workspaces button.active { color: @accent; }
+#workspaces button.empty  { color: alpha(@muted, 0.6); }
+#workspaces button.urgent { color: @pink; }
+#workspaces button:hover {
+    background: alpha(@fg, 0.08);
+    color: @fg;
+}
+
+#clock { font-weight: bold; }
+#mpris { color: @magenta; }
+
+#network.disconnected,
+#pulseaudio.muted { color: @muted; }
+
+#cpu.warning,  #memory.warning  { color: @pink; }
+#cpu.critical, #memory.critical { color: @red; }
+
+#custom-power { color: @red; padding: 0 12px; }
+
+#custom-menu:hover,
+#network:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover,
+#custom-power:hover {
+    background: alpha(@fg, 0.08);
+}
