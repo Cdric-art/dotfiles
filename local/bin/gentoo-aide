@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# Aide-mémoire Gentoo (Super+K) : affiche les commandes courantes dans rofi.
+# Rien n'est exécuté : Entrée copie seulement la commande choisie dans le presse-papiers.
+
+# Une ligne « # Titre » ouvre une section, sinon « commande|description ».
+read -r -d '' AIDE <<'EOF'
+# Mise à jour du système
+sudo eix-sync|Synchroniser Portage (et la base eix)
+sudo emerge -avuDN @world|Mettre à jour tous les paquets
+sudo dispatch-conf|Fusionner les fichiers de config modifiés
+eselect news read|Lire les news Gentoo
+# Nettoyage
+sudo emerge -a --depclean|Supprimer les dépendances orphelines
+sudo eclean-dist -d|Effacer les sources téléchargées inutiles
+sudo eclean-pkg -d|Effacer les paquets binaires inutiles
+# Installation
+eix nom|Rechercher un logiciel
+sudo emerge -av catégorie/paquet|Installer un logiciel
+# Suppression
+sudo emerge --deselect catégorie/paquet|Retirer le logiciel de @world
+sudo emerge -a --depclean|Puis le désinstaller (+ ses dépendances)
+EOF
+
+ACCENT="#979fec" # couleurs Ghost Pastel
+MUTED="#836f79"
+WIDTH=40         # largeur de la colonne des commandes
+
+esc() { local s=${1//&/&amp;}; s=${s//</&lt;}; printf '%s' "${s//>/&gt;}"; }
+
+cmds=()
+while IFS= read -r line; do
+	if [[ $line == "# "* ]]; then
+		cmds+=("")
+	else
+		cmds+=("${line%%|*}")
+	fi
+done <<<"$AIDE"
+
+rows() {
+	local line cmd desc
+	while IFS= read -r line; do
+		if [[ $line == "# "* ]]; then
+			# Titre de section, non sélectionnable
+			printf "<span color='%s'><b>%s</b></span>\0nonselectable\x1ftrue\n" "$ACCENT" "$(esc "${line#\# }")"
+		else
+			cmd=${line%%|*}
+			desc=${line#*|}
+			printf "  %s%*s<span color='%s'>%s</span>\n" "$(esc "$cmd")" $((WIDTH - ${#cmd})) '' "$MUTED" "$(esc "$desc")"
+		fi
+	done <<<"$AIDE"
+}
+
+i=$(rows | rofi -dmenu -i -markup-rows -no-custom -format i \
+	-p "Gentoo" \
+	-theme-str 'window { width: 760px; } listview { lines: 16; }')
+
+[[ -n $i && -n ${cmds[i]} ]] || exit 0
+wl-copy -n -- "${cmds[i]}"
+notify-send -a "Gentoo" "Commande copiée" "${cmds[i]}"

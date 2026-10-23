@@ -344,6 +344,9 @@ hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot -m region -o " .. sh
 hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("hyprshot -m window -o " .. shotDir))
 hl.bind(mainMod .. " + CTRL + F", hl.dsp.exec_cmd("hyprshot -m output -o " .. shotDir))
 
+-- Aide-mémoire des commandes Gentoo (rofi, n'exécute rien : copie seulement la commande choisie)
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/.local/bin/gentoo-aide"))
+
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------

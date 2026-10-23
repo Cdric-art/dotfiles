@@ -38,6 +38,7 @@ repris d'Omarchy.
 | `config/mimeapps.list` | `~/.config/` | Firefox par défaut |
 | `config/environment.d/`, `config/systemd/user/` | `~/.config/` | Agent SSH en service utilisateur |
 | `config/fontconfig/` | `~/.config/fontconfig/` | Réglages de polices |
+| `local/bin/gentoo-aide` | `~/.local/bin/` | Aide-mémoire des commandes Gentoo (`Super+K`) |
 | `local/share/color-schemes/Ghost.colors` | `~/.local/share/color-schemes/` | Jeu de couleurs KDE |
 | `local/share/org.kde.syntax-highlighting/themes/ghost.theme` | `~/.local/share/…` | Thème de l'éditeur Kate |
 | `icons/default/index.theme` | `~/.icons/default/` | Curseur Breeze partout |
@@ -86,6 +87,14 @@ et copiée dans le presse-papier.
 | `Super+Ctrl+S` | Zone à sélectionner |
 | `Super+Ctrl+W` | Fenêtre |
 | `Super+Ctrl+F` | Écran entier |
+
+## Aide-mémoire Gentoo
+
+`Super+K` ouvre une popup rofi qui liste les commandes du quotidien : mise à jour
+du système, nettoyage, installation et suppression d'un logiciel. Rien n'est
+exécuté : `Entrée` copie seulement la commande choisie dans le presse-papier
+(`wl-copy`), `Échap` ferme la popup. La liste se modifie en haut du script
+`gentoo-aide` (format `commande|description`, `# Titre` pour une section).
 
 ## Verrouillage automatique
 
