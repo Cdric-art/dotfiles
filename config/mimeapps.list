@@ -1,17 +1,29 @@
 [Added Associations]
-application/pdf=mupdf.desktop;
+application/pdf=onlyoffice-desktopeditors.desktop;mupdf.desktop;
 image/jpeg=imv-dir.desktop;imv.desktop;
+image/png=imv-dir.desktop;
+message/rfc822=userapp-Thunderbird-XU3HX3.desktop;
+text/markdown=dev.zed.Zed.desktop;
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/kdrive=kDrive.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-XU3HX3.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-XU3HX3.desktop;
+x-scheme-handler/net.thunderbird=userapp-Thunderbird-591CX3.desktop;
 
 [Default Applications]
-application/pdf=mupdf.desktop;
+application/pdf=onlyoffice-desktopeditors.desktop;
 application/xhtml+xml=firefox-bin.desktop
 image/jpeg=imv-dir.desktop;
+image/png=imv-dir.desktop;
+message/rfc822=userapp-Thunderbird-XU3HX3.desktop
 text/html=firefox-bin.desktop
+text/markdown=dev.zed.Zed.desktop;
 x-scheme-handler/about=firefox-bin.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/http=firefox-bin.desktop
 x-scheme-handler/https=firefox-bin.desktop
 x-scheme-handler/kdrive=kDrive.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-XU3HX3.desktop
+x-scheme-handler/mid=userapp-Thunderbird-XU3HX3.desktop
+x-scheme-handler/net.thunderbird=userapp-Thunderbird-591CX3.desktop
 x-scheme-handler/unknown=firefox-bin.desktop
