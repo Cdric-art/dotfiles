@@ -25,7 +25,8 @@ repris d'Omarchy.
 | `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi |
 | `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
 | `config/mako/` | `~/.config/mako/` | Notifications |
-| `config/kitty/` | `~/.config/kitty/` | Terminal + thème `ghost.conf` |
+| `config/ghostty/` | `~/.config/ghostty/` | Terminal par défaut + thème `themes/Ghost` |
+| `config/kitty/` | `~/.config/kitty/` | Ancien terminal + thème `ghost.conf` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
 | `config/fastfetch/` | `~/.config/fastfetch/` | Logo Gentoo |
@@ -71,7 +72,7 @@ sudo cp -r system/usr/. /usr/
 
 Hyprland (`gui-wm/hyprland`, dépôt hyproverlay), `hyprlock`, `hypridle`, `hyprpaper`,
 `hyprpolkitagent`, `xdg-desktop-portal-hyprland`, `waybar` (USE `tray network mpris`),
-`rofi-wayland`, `mako`, `hyprshot` (captures, avec `grim` et `slurp`), `kitty`, `btop`, `yazi`, `fastfetch`, `starship`, `zoxide`, `eza`,
+`rofi-wayland`, `mako`, `hyprshot` (captures, avec `grim` et `slurp`), `ghostty`, `kitty`, `btop`, `yazi`, `fastfetch`, `starship`, `zoxide`, `eza`,
 `neovim`, `zed`, SDDM, PipeWire/WirePlumber, KWallet (`kwallet-pam`), Breeze
 (curseur, `breeze-gtk`, `plasma-integration`), Dolphin, Kate, Okular, Firefox.
 

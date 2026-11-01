@@ -61,7 +61,7 @@
     "format-disconnected": "",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) — {ipaddr}",
     "tooltip-format-ethernet": "{ifname} — {ipaddr}",
-    "on-click": "kitty -e nmtui"
+    "on-click": "ghostty -e nmtui"
   },
 
   "pulseaudio": {
@@ -86,14 +86,14 @@
   "cpu": {
     "format": " {usage}%",
     "interval": 3,
-    "on-click": "kitty -e btop"
+    "on-click": "ghostty -e btop"
   },
 
   "memory": {
     "format": " {percentage}%",
     "interval": 5,
     "tooltip-format": "{used:0.1f} / {total:0.1f} Gio",
-    "on-click": "kitty -e btop"
+    "on-click": "ghostty -e btop"
   },
 
   "custom/power": {

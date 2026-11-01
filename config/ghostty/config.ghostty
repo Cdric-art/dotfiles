@@ -1,0 +1,12 @@
+# Ghostty — mêmes réglages que kitty, thème Ghost Pastel (themes/Ghost)
+theme = Ghost
+
+font-family = "Fira Code"
+font-size = 10
+
+window-padding-x = 0
+window-padding-y = 0
+
+# Pas de barre de titre (comme kitty sous Hyprland) ; onglets aux couleurs du thème
+window-decoration = none
+window-theme = ghostty
