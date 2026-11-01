@@ -15,3 +15,4 @@ eval "$(starship init bash)"
 
 export _ZO_DOCTOR=0
 eval "$(zoxide init bash)"
+export PATH="$HOME/.local/bin:$PATH"
