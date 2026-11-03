@@ -31,7 +31,7 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal = "ghostty"
+local terminal = "kitty"
 local fileManager = "dolphin"
 local menu = "rofi -show drun"
 

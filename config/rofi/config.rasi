@@ -13,7 +13,7 @@ configuration {
 @theme "ghost"
 
 * {
-    font: "Fira Code 10";
+    font: "Geist 10";
 
     background-color:   transparent;
     text-color:         @fg0;

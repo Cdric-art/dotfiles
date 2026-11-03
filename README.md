@@ -25,8 +25,8 @@ repris d'Omarchy.
 | `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi |
 | `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
 | `config/mako/` | `~/.config/mako/` | Notifications |
-| `config/ghostty/` | `~/.config/ghostty/` | Terminal par défaut + thème `themes/Ghost` |
-| `config/kitty/` | `~/.config/kitty/` | Ancien terminal + thème `ghost.conf` |
+| `config/ghostty/` | `~/.config/ghostty/` | Terminal secondaire + thème `themes/Ghost` |
+| `config/kitty/` | `~/.config/kitty/` | Terminal par défaut + thème `ghost.conf` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
 | `config/fastfetch/` | `~/.config/fastfetch/` | Logo Gentoo |
