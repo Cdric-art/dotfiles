@@ -45,9 +45,6 @@ repris d'Omarchy.
 | `icons/default/index.theme` | `~/.icons/default/` | Curseur Breeze partout |
 | `wallpapers/` | `~/Pictures/` | Un fond d'écran Ghost (à adapter dans `hyprpaper.conf`) |
 | `system/etc/portage/` | `/etc/portage/` | `make.conf`, `package.*`, dépôts (guru, hyproverlay), binhost |
-| `system/etc/sddm.conf.d/zz-ghost.conf` | `/etc/sddm.conf.d/` | Thème SDDM + curseur |
-| `system/etc/pam.d/sddm` | `/etc/pam.d/` | KWallet déverrouillé au login (GNOME Keyring désactivé) |
-| `system/usr/share/sddm/themes/ghost/` | `/usr/share/sddm/themes/` | Thème SDDM Ghost (QML, fond noir uni) |
 | `home/.bash_profile` | `~/` | Lance Hyprland après le login sur le tty1 |
 | `system/etc/pam.d/login` | `/etc/pam.d/` | KWallet déverrouillé au login tty (`force_run`) |
 | `system/etc/systemd/system/getty@tty1.service.d/` | `/etc/systemd/system/` | Invite de login propre sur le tty1 |
@@ -70,7 +67,6 @@ Fichiers système (relire avant de copier, surtout `make.conf`, `kernel/cmdline`
 
 ```sh
 sudo cp -r system/etc/. /etc/
-sudo cp -r system/usr/. /usr/
 ```
 
 ## Paquets principaux
@@ -78,15 +74,15 @@ sudo cp -r system/usr/. /usr/
 Hyprland (`gui-wm/hyprland`, dépôt hyproverlay), `hyprlock`, `hypridle`, `hyprpaper`,
 `hyprpolkitagent`, `xdg-desktop-portal-hyprland`, `waybar` (USE `tray network mpris`),
 `rofi-wayland`, `mako`, `hyprshot` (captures, avec `grim` et `slurp`), `ghostty`, `kitty`, `btop`, `yazi`, `fastfetch`, `starship`, `zoxide`, `eza`,
-`neovim`, `zed`, SDDM, PipeWire/WirePlumber, KWallet (`kwallet-pam`), Breeze
+`neovim`, `zed`, PipeWire/WirePlumber, KWallet (`kwallet-pam`), Breeze
 (curseur, `breeze-gtk`, `plasma-integration`), Dolphin, Kate, Okular, Firefox.
 
 Polices : Fira Code, Geist, Symbols Nerd Font, Noto.
 
 ## Connexion sans SDDM
 
-SDDM est désactivé : on se connecte sur le tty1 et `~/.bash_profile` lance
-`start-hyprland`. Les autres ttys restent des shells normaux (`Ctrl+Alt+F2`),
+Pas de gestionnaire de connexion (SDDM retiré) : on se connecte sur le tty1
+et `~/.bash_profile` lance `start-hyprland`. Les autres ttys restent des shells normaux (`Ctrl+Alt+F2`),
 pratiques si Hyprland ne démarre pas.
 
 - `pam_kwallet5` est ajouté dans `/etc/pam.d/login` avec `force_run`, sinon il
@@ -128,7 +124,7 @@ une vidéo…). Il revient à « actif » à chaque nouvelle session.
 ## Notes
 
 - **Plasma a été retiré**, mais certains paquets KDE sont gardés volontairement (voir `world`) :
-  `sddm`, `kwallet-pam`, `breeze`, `breeze-gtk`, `plasma-integration`.
+  `kwallet-pam`, `breeze`, `breeze-gtk`, `plasma-integration`.
 - `package.use/notification-daemon` (`-kde`) empêche `plasma-workspace` de revenir ;
   `package.use/zlib` garde `minizip`, requis par `assimp` hors du profil plasma.
 - `QT_QPA_PLATFORMTHEME=kde` (dans `hyprland.lua`) permet aux applis Qt de lire `kdeglobals`.
