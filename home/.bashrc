@@ -5,7 +5,7 @@ alias ins='sudo emerge -av'
 alias c="clear"
 alias ..="cd .."
 alias cd="z"
-alias ls="eza -l -a --icons=auto"
+alias ls="eza -l -a -G --icons=auto --group-directories-first"
 alias yz="yazi"
 alias lg="lazygit"
 
