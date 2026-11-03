@@ -48,6 +48,11 @@ repris d'Omarchy.
 | `system/etc/sddm.conf.d/zz-ghost.conf` | `/etc/sddm.conf.d/` | Thème SDDM + curseur |
 | `system/etc/pam.d/sddm` | `/etc/pam.d/` | KWallet déverrouillé au login (GNOME Keyring désactivé) |
 | `system/usr/share/sddm/themes/ghost/` | `/usr/share/sddm/themes/` | Thème SDDM Ghost (QML, fond noir uni) |
+| `home/.bash_profile` | `~/` | Lance Hyprland après le login sur le tty1 |
+| `system/etc/pam.d/login` | `/etc/pam.d/` | KWallet déverrouillé au login tty (`force_run`) |
+| `system/etc/systemd/system/getty@tty1.service.d/` | `/etc/systemd/system/` | Invite de login propre sur le tty1 |
+| `system/etc/dracut.conf.d/10-nvidia-drivers.conf` | `/etc/dracut.conf.d/` | Driver NVIDIA dans l'initramfs (early KMS) |
+| `system/etc/kernel/cmdline` | `/etc/kernel/` | Options du noyau (UUID racine à adapter) |
 
 ## Installation
 
@@ -61,7 +66,7 @@ cp -r icons/. ~/.icons/
 cp wallpapers/* ~/Pictures/
 ```
 
-Fichiers système (relire avant de copier, surtout `make.conf` et `pam.d/sddm`) :
+Fichiers système (relire avant de copier, surtout `make.conf`, `kernel/cmdline` et `pam.d/`) :
 
 ```sh
 sudo cp -r system/etc/. /etc/
@@ -77,6 +82,20 @@ Hyprland (`gui-wm/hyprland`, dépôt hyproverlay), `hyprlock`, `hypridle`, `hypr
 (curseur, `breeze-gtk`, `plasma-integration`), Dolphin, Kate, Okular, Firefox.
 
 Polices : Fira Code, Geist, Symbols Nerd Font, Noto.
+
+## Connexion sans SDDM
+
+SDDM est désactivé : on se connecte sur le tty1 et `~/.bash_profile` lance
+`start-hyprland`. Les autres ttys restent des shells normaux (`Ctrl+Alt+F2`),
+pratiques si Hyprland ne démarre pas.
+
+- `pam_kwallet5` est ajouté dans `/etc/pam.d/login` avec `force_run`, sinon il
+  ignore les sessions tty (« not a graphical session ») et KWallet reste verrouillé.
+- Pour éviter les clignotements de l'invite, le driver NVIDIA est chargé dès
+  l'initramfs (fichier dracut du même nom que celui de Gentoo, qui l'exclut) et
+  `fbcon=nodefer` fait basculer la console avant getty. Après une modification :
+  `sudo emerge --config sys-kernel/gentoo-kernel`.
+- Lors d'une mise à jour, garder sa version de `/etc/pam.d/login` (supprimer le `._cfg*`).
 
 ## Captures d'écran
 

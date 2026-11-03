@@ -1,0 +1,6 @@
+auth		include		system-local-login
+-auth		optional	pam_kwallet5.so	force_run
+account		include		system-local-login
+password	include		system-local-login
+session		include		system-local-login
+-session	optional	pam_kwallet5.so		auto_start force_run

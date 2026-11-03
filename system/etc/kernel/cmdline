@@ -1,0 +1,1 @@
+root=UUID=11ddee9d-3138-452a-b0ce-8d23bb470e73 rw quiet loglevel=3 fbcon=nodefer nvidia_drm.modeset=1 nvidia_drm.fbdev=1
