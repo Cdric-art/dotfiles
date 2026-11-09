@@ -10,7 +10,7 @@
 
 * {
     font-family: "Geist", "Symbols Nerd Font";
-    font-size: 12px;
+    font-size: 10px;
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -80,6 +80,9 @@ tooltip label { color: @fg; }
 #cpu.critical, #memory.critical { color: @red; }
 
 #custom-power { color: @red; padding: 0 12px; }
+
+#image.herdr { padding: 0 10px; }
+#image.herdr:hover { background: alpha(@fg, 0.08); }
 
 #custom-menu:hover,
 #idle_inhibitor:hover,

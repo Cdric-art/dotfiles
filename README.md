@@ -22,7 +22,7 @@ repris d'Omarchy.
 |---|---|---|
 | `home/` | `~/` | `.bashrc`, `.bash_profile`, `.gtkrc-2.0` |
 | `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua), hyprlock (capture du bureau floutée), hypridle, hyprpaper |
-| `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi |
+| `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi + bouton Herdr (focus ou lancement) |
 | `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
 | `config/mako/` | `~/.config/mako/` | Notifications |
 | `config/ghostty/` | `~/.config/ghostty/` | Terminal secondaire + thème `themes/Ghost` |
