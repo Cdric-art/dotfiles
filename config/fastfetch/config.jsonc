@@ -61,11 +61,6 @@
       "format": "\u001b[90m├─────────────────────────────────────────────────────────────┤"
     },
     {
-      "type": "memory",
-      "key": "",
-      "keycolor": "blue"
-    },
-    {
       "type": "host",
       "key": "",
       "keycolor": "blue"
@@ -81,17 +76,17 @@
       "keycolor": "magenta"
     },
     {
-      "type": "swap",
-      "key": "",
-      "keycolor": "magenta"
-    },
-    {
-      "type": "disk",
+      "type": "display",
       "key": "",
       "keycolor": "red"
     },
     {
-      "type": "battery",
+      "type": "memory",
+      "key": "",
+      "keycolor": "blue"
+    },
+    {
+      "type": "disk",
       "key": "",
       "keycolor": "red"
     },
@@ -106,6 +101,11 @@
     },
     {
       "type": "terminal",
+      "key": "",
+      "keycolor": "yellow"
+    },
+    {
+      "type": "font",
       "key": "",
       "keycolor": "yellow"
     },

@@ -43,7 +43,7 @@ repris d'Omarchy.
 | `local/share/color-schemes/Ghost.colors` | `~/.local/share/color-schemes/` | Jeu de couleurs KDE |
 | `local/share/org.kde.syntax-highlighting/themes/ghost.theme` | `~/.local/share/…` | Thème de l'éditeur Kate |
 | `icons/default/index.theme` | `~/.icons/default/` | Curseur Breeze partout |
-| `wallpapers/` | `~/Pictures/` | Un fond d'écran Ghost (à adapter dans `hyprpaper.conf`) |
+| `wallpapers/` | `~/Pictures/` | Fonds d'écran (celui utilisé est défini dans `hyprpaper.conf`) |
 | `system/etc/portage/` | `/etc/portage/` | `make.conf`, `package.*`, dépôts (guru, hyproverlay), binhost |
 | `home/.bash_profile` | `~/` | Lance Hyprland après le login sur le tty1 |
 | `system/etc/pam.d/login` | `/etc/pam.d/` | KWallet déverrouillé au login tty (`force_run`) |
