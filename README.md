@@ -33,7 +33,8 @@ repris d'Omarchy.
 | `config/fastfetch/` | `~/.config/fastfetch/` | Logo Gentoo |
 | `config/nvim/` | `~/.config/nvim/` | LazyVim |
 | `config/zed/` | `~/.config/zed/` | Éditeur Zed |
-| `config/starship.toml` | `~/.config/` | Prompt |
+| `config/starship.toml` | `~/.config/` | Prompt + profil `claude-code` (status line de Claude Code) |
+| `claude/statusline.sh` | `~/.claude/` | Status line de Claude Code : starship + niveau d'effort |
 | `config/git/` | `~/.config/git/` | Alias et réglages Git (section `[user]` retirée) |
 | `config/gtk-3.0/`, `config/gtk-4.0/` | `~/.config/` | Breeze GTK recoloré en Ghost (`colors.css`, boutons de fenêtre) |
 | `config/kdeglobals`, `katerc`, `dolphinrc`, `okularrc` | `~/.config/` | Applis KDE en Ghost |
@@ -121,6 +122,17 @@ l'éteint après **30 min**. Il verrouille aussi avant une mise en veille.
 Le bouton à droite de l'heure dans la Waybar (`idle_inhibitor`) le met en pause :
 cadenas gris = verrouillage actif, tasse violette = désactivé (pour lire, regarder
 une vidéo…). Il revient à « actif » à chaque nouvelle session.
+
+## Status line de Claude Code
+
+`claude/statusline.sh` extrait le niveau d'effort du JSON envoyé par Claude Code
+(starship 1.26 ne l'affiche pas) puis appelle `starship statusline claude-code`.
+Rendu : `on 🤖 Opus 5.5 · high  ███░░░░░░░ 31%`, jauge violette, rose dès 70 %,
+rouge dès 90 %. Nécessite `jq`. Dans `~/.claude/settings.json` :
+
+```json
+"statusLine": { "type": "command", "command": "~/.claude/statusline.sh" }
+```
 
 ## Notes
 

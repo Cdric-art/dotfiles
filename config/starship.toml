@@ -1,5 +1,42 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+
+# Customize the claude-code profile
+[profiles]
+claude-code = "$claude_model${env_var.CLAUDE_EFFORT}$git_branch$claude_context"
+
+# Configure individual modules
+[claude_model]
+format = "on [$symbol$model]($style) "
+symbol = "🤖 "
+style = "blue"
+
+# Effort de Claude, fourni par ~/.claude/statusline.sh (vide dans le shell normal)
+[env_var.CLAUDE_EFFORT]
+variable = "CLAUDE_EFFORT"
+format = "[· $env_value]($style) "
+style = "fg:#c3cef2"
+
+# Jauge de contexte : blocs nets + pourcentage, couleurs Ghost Pastel
+[claude_context]
+gauge_full_symbol = "█"
+gauge_partial_symbol = "▌"
+gauge_empty_symbol = "░"
+gauge_width = 10
+format = " [$gauge $percentage]($style)"
+
+[[claude_context.display]]
+threshold = 0.0
+style = "fg:#979fec"
+
+[[claude_context.display]]
+threshold = 70.0
+style = "fg:#e095b5"
+
+[[claude_context.display]]
+threshold = 90.0
+style = "bold fg:#b37580"
+
 [aws]
 symbol = " "
 
