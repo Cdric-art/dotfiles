@@ -1,0 +1,12 @@
+{
+  "zoom": 1,
+  "sounds": {
+    "enabled": true
+  },
+  "font_ligatures": false,
+  "minimum_contrast": 1,
+  "font": "Geist Mono",
+  "font_size": 12,
+  "telemetry": false,
+  "theme": "ghost"
+}

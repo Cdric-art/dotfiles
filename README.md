@@ -26,6 +26,7 @@ repris d'Omarchy.
 | `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
 | `config/mako/` | `~/.config/mako/` | Notifications |
 | `config/ghostty/` | `~/.config/ghostty/` | Terminal secondaire + thème `themes/Ghost` |
+| `config/herdr-app/` | `~/.config/herdr-app/` | herdr (app) : réglages + thème `themes/ghost.json` |
 | `config/kitty/` | `~/.config/kitty/` | Terminal par défaut + thème `ghost.conf` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
