@@ -5,9 +5,9 @@
   "height": 26,
   "spacing": 0,
 
-  "modules-left": ["custom/menu", "hyprland/workspaces"],
-  "modules-center": ["clock", "idle_inhibitor", "mpris"],
-  "modules-right": ["image#herdr", "tray","pulseaudio", "pulseaudio#mic", "cpu", "memory", "custom/power"],
+  "modules-left": ["custom/menu", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["image#herdr", "tray", "pulseaudio", "cpu", "memory", "network", "idle_inhibitor", "custom/power"],
 
   "custom/menu": {
     "format": "",
@@ -15,9 +15,15 @@
     "on-click": "rofi -show drun"
   },
 
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "separate-outputs": true
+  },
+
   "hyprland/workspaces": {
     "format": "{id}",
-    "persistent-workspaces": { "*": 3 },
+    "persistent-workspaces": { "*": 5 },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },

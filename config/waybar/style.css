@@ -29,6 +29,7 @@ tooltip label { color: @fg; }
 
 #custom-menu,
 #workspaces button,
+#window,
 #clock,
 #idle_inhibitor,
 #mpris,
@@ -50,14 +51,18 @@ tooltip label { color: @fg; }
     padding: 0 12px;
 }
 
+/* Workspaces : actif = violet gras, avec fenêtres = blanc, vide = estompé */
 #workspaces button {
     padding: 0 8px;
-    color: @muted;
+    color: @fg;
     box-shadow: none;
     text-shadow: none;
 }
-#workspaces button.active { color: @accent; }
-#workspaces button.empty  { color: alpha(@muted, 0.6); }
+#workspaces button.empty  { color: alpha(@muted, 0.5); }
+#workspaces button.active {
+    color: @accent;
+    font-weight: bold;
+}
 #workspaces button.urgent { color: @pink; }
 #workspaces button:hover {
     background: alpha(@fg, 0.08);
@@ -65,6 +70,7 @@ tooltip label { color: @fg; }
 }
 
 #clock { font-weight: bold; }
+#window { color: @fg; }
 #mpris { color: @magenta; }
 
 #idle_inhibitor { color: @muted; }

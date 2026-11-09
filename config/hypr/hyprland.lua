@@ -287,10 +287,10 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with mainMod + [1-3]
--- Move active window to a workspace with mainMod + SHIFT + [1-3]
--- Keycodes (code:10..12) = rangée du haut, indépendant de la disposition (AZERTY)
-for i = 1, 3 do
+-- Switch workspaces with mainMod + [1-5]
+-- Move active window to a workspace with mainMod + SHIFT + [1-5]
+-- Keycodes (code:10..14) = rangée du haut, indépendant de la disposition (AZERTY)
+for i = 1, 5 do
 	local key = "code:" .. (9 + i)
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
