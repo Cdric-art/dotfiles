@@ -1,0 +1,58 @@
+/* Ghost Pastel — https://omarchytheme.com/themes/ghost-pastel */
+/* bg0 #070506  bg1 #120e10  bg2 #2a2228  muted #836f79  fg #ffffff  accent #979fec */
+* {
+  font-family: "Hack Nerd Font";
+  font-size: 10pt;
+}
+
+window {
+  background-color: #070506;
+  border: 1px solid #836f79;
+  border-radius: 0;
+}
+
+#outer-box {
+  padding: 12px;
+}
+
+#input {
+  background-color: #120e10;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 8px 16px;
+  margin-bottom: 12px;
+  box-shadow: none;
+  outline: none;
+}
+
+#input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+#inner-box, #scroll {
+  background-color: transparent;
+}
+
+#entry {
+  padding: 8px 16px;
+  border-radius: 0;
+}
+
+#entry:selected {
+  background-color: #2a2228;
+  outline: none;
+}
+
+#text {
+  color: #ffffff;
+}
+
+#entry:selected #text {
+  color: #979fec;
+}
+
+#img {
+  margin-right: 8px;
+}

@@ -1,0 +1,12 @@
+# wofi — repris de l'ancienne config rofi, thème Ghost Pastel (style.css)
+width=300
+lines=10
+location=center
+allow_images=true
+image_size=16
+insensitive=true
+matching=contains
+prompt=Rechercher
+hide_scroll=true
+no_actions=true
+term=kitty

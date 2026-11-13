@@ -33,7 +33,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "dolphin"
-local menu = "rofi -show drun"
+local menu = "wofi --show drun"
 
 -------------------
 ---- AUTOSTART ----
@@ -47,13 +47,13 @@ local menu = "rofi -show drun"
 hl.on("hyprland.start", function()
 	--   hl.exec_cmd(terminal)
 	--   hl.exec_cmd("nm-applet")
-	hl.exec_cmd("waybar & hyprpaper & mako & hypridle")
+	hl.exec_cmd("waybar & hyprpaper & hypridle")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_cmd("/usr/libexec/hyprpolkitagent")
-	-- Déverrouille KWallet avec le mot de passe de session (PAM)
-	hl.exec_cmd("/usr/libexec/pam_kwallet_init")
-	-- kDrive : attend que la Waybar (tray) soit prête
-	hl.exec_cmd("sleep 5 && ~/Apps/kDrive-3.8.8.1-amd64.appimage")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	-- Déverrouille KWallet avec le mot de passe de session (PAM, paquet kwallet-pam)
+	hl.exec_cmd("[ -x /usr/lib/pam_kwallet_init ] && /usr/lib/pam_kwallet_init")
+	-- kDrive (AUR kdrive-bin) : attend que la Waybar (tray) soit prête
+	hl.exec_cmd("sleep 5 && kDrive")
 end)
 
 -------------------------------
@@ -62,11 +62,8 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("XCURSOR_THEME", "breeze_cursors")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
--- Applis Qt/KDE : couleurs et style via plasma-integration (kdeglobals)
-hl.env("QT_QPA_PLATFORMTHEME", "kde")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -110,7 +107,7 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = true,
 
-		layout = "master",
+		layout = "dwindle",
 	},
 
 	group = {
@@ -156,7 +153,7 @@ hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 }
 hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
 
 -- Default springs
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, damping = 24.21279333 })
 
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
@@ -344,8 +341,8 @@ hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot -m region -o " .. sh
 hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("hyprshot -m window -o " .. shotDir))
 hl.bind(mainMod .. " + CTRL + F", hl.dsp.exec_cmd("hyprshot -m output -o " .. shotDir))
 
--- Aide-mémoire des commandes Gentoo (rofi, n'exécute rien : copie seulement la commande choisie)
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/.local/bin/gentoo-aide"))
+-- Aide-mémoire des commandes Arch (wofi, n'exécute rien : copie seulement la commande choisie)
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("/home/cdrc/.local/bin/arch-aide"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----

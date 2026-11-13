@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Aide-mémoire Arch (Super+K) : affiche les commandes courantes dans wofi.
+# Rien n'est exécuté : Entrée copie seulement la commande choisie dans le presse-papiers.
+
+# Une ligne « # Titre » ouvre une section, sinon « commande|description ».
+read -r -d '' AIDE <<'LISTE'
+# Mise à jour du système
+yay -Syu|Mettre à jour tous les paquets (dépôts + AUR)
+sudo pacman -Syu|Mettre à jour uniquement les dépôts officiels
+pacdiff|Fusionner les fichiers .pacnew / .pacsave
+# Nettoyage
+sudo pacman -Rns $(pacman -Qdtq)|Supprimer les dépendances orphelines
+yay -Sc|Vider le cache des paquets (dépôts + AUR)
+paccache -rk2|Garder seulement 2 versions en cache (pacman-contrib)
+# Installation
+yay -Ss nom|Rechercher un logiciel (dépôts + AUR)
+yay -S paquet|Installer un logiciel
+pacman -Qi paquet|Infos sur un paquet installé
+pacman -Qo /chemin/fichier|Quel paquet possède ce fichier
+# Suppression
+sudo pacman -Rns paquet|Désinstaller (+ dépendances inutiles et configs)
+LISTE
+
+ACCENT="#979fec" # couleurs Ghost Pastel
+MUTED="#836f79"
+WIDTH=36         # largeur de la colonne des commandes
+
+esc() { local s=${1//&/&amp;}; s=${s//</&lt;}; printf '%s' "${s//>/&gt;}"; }
+
+declare -A cmd_of
+rows=""
+while IFS= read -r line; do
+	if [[ $line == "# "* ]]; then
+		row="<span color='$ACCENT'><b>$(esc "${line#\# }")</b></span>"
+	else
+		cmd=${line%%|*}
+		desc=${line#*|}
+		printf -v pad '%*s' $((WIDTH - ${#cmd})) ''
+		row="  $(esc "$cmd")$pad<span color='$MUTED'>$(esc "$desc")</span>"
+		cmd_of[$row]=$cmd
+	fi
+	rows+="$row"$'\n'
+done <<<"$AIDE"
+
+choice=$(printf '%s' "$rows" | wofi --dmenu --allow-markup -i -p "Arch" \
+	--width 760 --lines 18 --cache-file /dev/null)
+
+cmd=${cmd_of[$choice]}
+[[ -n $cmd ]] || exit 0
+wl-copy -n -- "$cmd"
+notify-send -a "Arch" "Commande copiée" "$cmd"

@@ -1,1 +1,54 @@
-@import 'colors.css';
+/* Ghost Pastel — https://omarchytheme.com/themes/ghost-pastel
+   bg #070506 · surface #120e10 / #1a1418 · bordure #3a3036 · muted #836f79 · accent #979fec */
+
+/* Thème adw-gtk3-dark : il lit ces couleurs nommées libadwaita */
+@define-color accent_color #979fec;
+@define-color accent_bg_color #979fec;
+@define-color accent_fg_color #070506;
+@define-color destructive_color #b37580;
+@define-color destructive_bg_color #b37580;
+@define-color destructive_fg_color #070506;
+@define-color success_color #648ed0;
+@define-color success_bg_color #648ed0;
+@define-color success_fg_color #070506;
+@define-color warning_color #e095b5;
+@define-color warning_bg_color #e095b5;
+@define-color warning_fg_color #070506;
+@define-color error_color #b37580;
+@define-color error_bg_color #b37580;
+@define-color error_fg_color #070506;
+@define-color window_bg_color #120e10;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #070506;
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color #1a1418;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_border_color #3a3036;
+@define-color headerbar_backdrop_color #120e10;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.36);
+@define-color headerbar_darker_shade_color rgba(0, 0, 0, 0.9);
+@define-color sidebar_bg_color #120e10;
+@define-color sidebar_fg_color #ffffff;
+@define-color sidebar_backdrop_color #120e10;
+@define-color sidebar_border_color #3a3036;
+@define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_bg_color #0d0a0c;
+@define-color secondary_sidebar_fg_color #ffffff;
+@define-color secondary_sidebar_backdrop_color #0d0a0c;
+@define-color secondary_sidebar_border_color #3a3036;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color card_bg_color #1a1418;
+@define-color card_fg_color #ffffff;
+@define-color card_shade_color rgba(0, 0, 0, 0.36);
+@define-color dialog_bg_color #1a1418;
+@define-color dialog_fg_color #ffffff;
+@define-color popover_bg_color #1a1418;
+@define-color popover_fg_color #ffffff;
+@define-color popover_shade_color rgba(0, 0, 0, 0.25);
+@define-color thumbnail_bg_color #1a1418;
+@define-color thumbnail_fg_color #ffffff;
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
+
+/* Sélection de texte */
+selection { background-color: alpha(#979fec, 0.35); color: #ffffff; }

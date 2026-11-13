@@ -1,8 +1,11 @@
-# Dotfiles Gentoo · Hyprland · Ghost Pastel
+# Dotfiles Arch Linux · Hyprland · Ghost Pastel
 
-Configuration de mon poste Gentoo (profil `default/linux/amd64/23.0/desktop/systemd`)
-sous **Hyprland**, harmonisée avec le thème **[Ghost Pastel](https://omarchytheme.com/themes/ghost-pastel)**
-repris d'Omarchy.
+Configuration de mon poste **Arch Linux** sous **Hyprland** (config Lua),
+harmonisée avec le thème **[Ghost Pastel](https://omarchytheme.com/themes/ghost-pastel)**
+repris d'Omarchy. Police unique : **Hack Nerd Font**.
+
+> Ce dépôt a d'abord servi sur Gentoo (oct.–nov. 2026) : les fichiers Portage, dracut,
+> SDDM, rofi, mako, ghostty et herdr sont dans l'historique Git.
 
 ## Palette
 
@@ -20,40 +23,42 @@ repris d'Omarchy.
 
 | Dossier du dépôt | Destination | Contenu |
 |---|---|---|
-| `home/` | `~/` | `.bashrc`, `.bash_profile`, `.gtkrc-2.0` |
-| `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua), hyprlock (capture du bureau floutée), hypridle, hyprpaper |
-| `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu power rofi + bouton Herdr (focus ou lancement) |
-| `config/rofi/` | `~/.config/rofi/` | Lanceur + thème `ghost.rasi` |
-| `config/mako/` | `~/.config/mako/` | Notifications |
-| `config/ghostty/` | `~/.config/ghostty/` | Terminal secondaire + thème `themes/Ghost` |
-| `config/herdr-app/` | `~/.config/herdr-app/` | herdr (app) : réglages + thème `themes/ghost.json` |
-| `config/kitty/` | `~/.config/kitty/` | Terminal par défaut + thème `ghost.conf` |
+| `home/` | `~/` | `.bashrc` (alias `up`/`clean`/`ins` avec yay), `.gtkrc-2.0` |
+| `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua, layout dwindle), hyprlock (capture du bureau floutée), hypridle, hyprpaper |
+| `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu d'alimentation wofi |
+| `config/wofi/` | `~/.config/wofi/` | Lanceur (`Super+Espace`) + thème Ghost (`style.css`) |
+| `config/kitty/` | `~/.config/kitty/` | Terminal + thème `ghost.conf` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
-| `config/fastfetch/` | `~/.config/fastfetch/` | Logo Gentoo |
+| `config/fastfetch/` | `~/.config/fastfetch/` | Logo Arch |
 | `config/nvim/` | `~/.config/nvim/` | LazyVim |
 | `config/zed/` | `~/.config/zed/` | Éditeur Zed |
 | `config/starship.toml` | `~/.config/` | Prompt + profil `claude-code` (status line de Claude Code) |
 | `claude/statusline.sh` | `~/.claude/` | Status line de Claude Code : starship + niveau d'effort |
 | `config/git/` | `~/.config/git/` | Alias et réglages Git (section `[user]` retirée) |
-| `config/gtk-3.0/`, `config/gtk-4.0/` | `~/.config/` | Breeze GTK recoloré en Ghost (`colors.css`, boutons de fenêtre) |
-| `config/kdeglobals`, `katerc`, `dolphinrc`, `okularrc` | `~/.config/` | Applis KDE en Ghost |
+| `config/gtk-3.0/`, `config/gtk-4.0/` | `~/.config/` | Couleurs Ghost pour libadwaita (GTK4) et adw-gtk3 (GTK3) |
+| `config/kdeglobals`, `dolphinrc` | `~/.config/` | Dolphin en Ghost |
 | `config/mimeapps.list` | `~/.config/` | Firefox par défaut |
-| `config/environment.d/`, `config/systemd/user/` | `~/.config/` | Agent SSH en service utilisateur |
+| `config/environment.d/` | `~/.config/` | `SSH_AUTH_SOCK` pour l'agent SSH de systemd |
 | `config/fontconfig/` | `~/.config/fontconfig/` | Réglages de polices |
-| `local/bin/gentoo-aide` | `~/.local/bin/` | Aide-mémoire des commandes Gentoo (`Super+K`) |
+| `local/bin/arch-aide` | `~/.local/bin/` | Aide-mémoire des commandes pacman/yay (`Super+K`) |
 | `local/share/color-schemes/Ghost.colors` | `~/.local/share/color-schemes/` | Jeu de couleurs KDE |
-| `local/share/org.kde.syntax-highlighting/themes/ghost.theme` | `~/.local/share/…` | Thème de l'éditeur Kate |
-| `icons/default/index.theme` | `~/.icons/default/` | Curseur Breeze partout |
 | `wallpapers/` | `~/Pictures/` | Fonds d'écran (celui utilisé est défini dans `hyprpaper.conf`) |
-| `system/etc/portage/` | `/etc/portage/` | `make.conf`, `package.*`, dépôts (guru, hyproverlay), binhost |
-| `home/.bash_profile` | `~/` | Lance Hyprland après le login sur le tty1 |
-| `system/etc/pam.d/login` | `/etc/pam.d/` | KWallet déverrouillé au login tty (`force_run`) |
-| `system/etc/systemd/system/getty@tty1.service.d/` | `/etc/systemd/system/` | Invite de login propre sur le tty1 |
-| `system/etc/dracut.conf.d/10-nvidia-drivers.conf` | `/etc/dracut.conf.d/` | Driver NVIDIA dans l'initramfs (early KMS) |
-| `system/etc/kernel/cmdline` | `/etc/kernel/` | Options du noyau (UUID racine à adapter) |
 
 ## Installation
+
+Paquets (dépôts officiels + AUR via `yay`) :
+
+```sh
+sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper hyprpolkitagent hyprshot \
+  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar wofi kitty btop yazi fastfetch \
+  neovim zed zoxide eza lazygit jq wl-clipboard grim slurp playerctl libnotify \
+  pipewire pipewire-pulse wireplumber kwallet kwallet-pam dolphin ark firefox \
+  adw-gtk-theme ttf-hack-nerd tuned ly
+yay -S kdrive-bin
+```
+
+starship s'installe avec le script officiel (`/usr/local/bin/starship`).
 
 Fichiers utilisateur :
 
@@ -61,39 +66,41 @@ Fichiers utilisateur :
 cp -r home/. ~/
 cp -r config/. ~/.config/
 cp -r local/. ~/.local/
-cp -r icons/. ~/.icons/
+cp -r claude/. ~/.claude/
 cp wallpapers/* ~/Pictures/
 ```
 
-Fichiers système (relire avant de copier, surtout `make.conf`, `kernel/cmdline` et `pam.d/`) :
+Services :
 
 ```sh
-sudo cp -r system/etc/. /etc/
+sudo systemctl enable ly@tty1.service
+sudo systemctl enable --now tuned
+sudo tuned-adm profile throughput-performance
+systemctl --user enable --now ssh-agent.socket
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 ```
 
-## Paquets principaux
+## Session
 
-Hyprland (`gui-wm/hyprland`, dépôt hyproverlay), `hyprlock`, `hypridle`, `hyprpaper`,
-`hyprpolkitagent`, `xdg-desktop-portal-hyprland`, `waybar` (USE `tray network mpris`),
-`rofi-wayland`, `mako`, `hyprshot` (captures, avec `grim` et `slurp`), `ghostty`, `kitty`, `btop`, `yazi`, `fastfetch`, `starship`, `zoxide`, `eza`,
-`neovim`, `zed`, PipeWire/WirePlumber, KWallet (`kwallet-pam`), Breeze
-(curseur, `breeze-gtk`, `plasma-integration`), Dolphin, Kate, Okular, Firefox.
+- Connexion par **Ly** (`ly@tty1`). Son fichier PAM (`/etc/pam.d/ly`) appelle déjà
+  `pam_kwallet5` : avec `kwallet-pam` installé, KWallet est déverrouillé au login
+  (kDrive y garde son jeton). Ne pas installer `gnome-keyring` en parallèle : les deux
+  se disputent `org.freedesktop.secrets` et kDrive perd sa connexion.
+- Hyprland ne lit pas `~/.config/autostart` : tout est lancé depuis le bloc
+  `hyprland.start` de `hyprland.lua` (Waybar, hyprpaper, hypridle, hyprpolkitagent,
+  `pam_kwallet_init`, kDrive).
+- Notifications : système intégré à Hyprland (pas de mako).
+- `~/.local/bin` n'est pas dans le `PATH` de Hyprland ni de Waybar : chemins complets
+  dans les raccourcis et modules.
+- Raccourcis de workspaces en keycodes (`code:10`…`code:14`) pour fonctionner en AZERTY.
 
-Polices : Fira Code, Geist, Symbols Nerd Font, Noto.
+## Thème GTK
 
-## Connexion sans SDDM
-
-Pas de gestionnaire de connexion (SDDM retiré) : on se connecte sur le tty1
-et `~/.bash_profile` lance `start-hyprland`. Les autres ttys restent des shells normaux (`Ctrl+Alt+F2`),
-pratiques si Hyprland ne démarre pas.
-
-- `pam_kwallet5` est ajouté dans `/etc/pam.d/login` avec `force_run`, sinon il
-  ignore les sessions tty (« not a graphical session ») et KWallet reste verrouillé.
-- Pour éviter les clignotements de l'invite, le driver NVIDIA est chargé dès
-  l'initramfs (fichier dracut du même nom que celui de Gentoo, qui l'exclut) et
-  `fbcon=nodefer` fait basculer la console avant getty. Après une modification :
-  `sudo emerge --config sys-kernel/gentoo-kernel`.
-- Lors d'une mise à jour, garder sa version de `/etc/pam.d/login` (supprimer le `._cfg*`).
+`gtk.css` redéfinit les couleurs nommées de libadwaita (variables CSS `--accent-bg-color`…
+en GTK4, `@define-color` en GTK3). En GTK3, seul le thème **adw-gtk3** (`adw-gtk-theme`)
+lit ces couleurs. Les applis Qt hors KDE gardent leur style par défaut (pas de
+`plasma-integration`).
 
 ## Captures d'écran
 
@@ -106,41 +113,30 @@ et copiée dans le presse-papier.
 | `Super+Ctrl+W` | Fenêtre |
 | `Super+Ctrl+F` | Écran entier |
 
-## Aide-mémoire Gentoo
+## Aide-mémoire Arch
 
-`Super+K` ouvre une popup rofi qui liste les commandes du quotidien : mise à jour
+`Super+K` ouvre une popup wofi qui liste les commandes du quotidien : mise à jour
 du système, nettoyage, installation et suppression d'un logiciel. Rien n'est
 exécuté : `Entrée` copie seulement la commande choisie dans le presse-papier
 (`wl-copy`), `Échap` ferme la popup. La liste se modifie en haut du script
-`gentoo-aide` (format `commande|description`, `# Titre` pour une section).
+`arch-aide` (format `commande|description`, `# Titre` pour une section).
 
 ## Verrouillage automatique
 
 `hypridle` verrouille l'écran avec hyprlock après **5 min** d'inactivité et
 l'éteint après **30 min**. Il verrouille aussi avant une mise en veille.
 
-Le bouton à droite de l'heure dans la Waybar (`idle_inhibitor`) le met en pause :
+Le bouton `idle_inhibitor` de la Waybar (à gauche du bouton d'alimentation) le met en pause :
 cadenas gris = verrouillage actif, tasse violette = désactivé (pour lire, regarder
 une vidéo…). Il revient à « actif » à chaque nouvelle session.
 
 ## Status line de Claude Code
 
 `claude/statusline.sh` extrait le niveau d'effort du JSON envoyé par Claude Code
-(starship 1.26 ne l'affiche pas) puis appelle `starship statusline claude-code`.
+(starship ne l'affiche pas) puis appelle `starship statusline claude-code`.
 Rendu : `on 🤖 Opus 5.5 · high  ███░░░░░░░ 31%`, jauge violette, rose dès 70 %,
 rouge dès 90 %. Nécessite `jq`. Dans `~/.claude/settings.json` :
 
 ```json
 "statusLine": { "type": "command", "command": "~/.claude/statusline.sh" }
 ```
-
-## Notes
-
-- **Plasma a été retiré**, mais certains paquets KDE sont gardés volontairement (voir `world`) :
-  `kwallet-pam`, `breeze`, `breeze-gtk`, `plasma-integration`.
-- `package.use/notification-daemon` (`-kde`) empêche `plasma-workspace` de revenir ;
-  `package.use/zlib` garde `minizip`, requis par `assimp` hors du profil plasma.
-- `QT_QPA_PLATFORMTHEME=kde` (dans `hyprland.lua`) permet aux applis Qt de lire `kdeglobals`.
-- Hyprland ne lit pas `~/.config/autostart` : tout est lancé depuis le bloc `hyprland.start`
-  de `hyprland.lua` (Waybar, hyprpaper, mako, polkit, `pam_kwallet_init`, kDrive).
-- Chemins à adapter : AppImage kDrive dans `hyprland.lua`, `icon-path` dans `mako/config`.

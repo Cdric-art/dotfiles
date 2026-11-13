@@ -1,1 +1,104 @@
-@import 'colors.css';
+/* Ghost Pastel — https://omarchytheme.com/themes/ghost-pastel
+   bg #070506 · surface #120e10 / #1a1418 · bordure #3a3036 · muted #836f79 · accent #979fec */
+
+/* libadwaita ≥ 1.6 : variables CSS (+ anciennes couleurs nommées pour les apps GTK4 sans libadwaita) */
+:root {
+  --accent-color: #979fec;
+  --accent-bg-color: #979fec;
+  --accent-fg-color: #070506;
+  --destructive-color: #b37580;
+  --destructive-bg-color: #b37580;
+  --destructive-fg-color: #070506;
+  --success-color: #648ed0;
+  --success-bg-color: #648ed0;
+  --success-fg-color: #070506;
+  --warning-color: #e095b5;
+  --warning-bg-color: #e095b5;
+  --warning-fg-color: #070506;
+  --error-color: #b37580;
+  --error-bg-color: #b37580;
+  --error-fg-color: #070506;
+  --window-bg-color: #120e10;
+  --window-fg-color: #ffffff;
+  --view-bg-color: #070506;
+  --view-fg-color: #ffffff;
+  --headerbar-bg-color: #1a1418;
+  --headerbar-fg-color: #ffffff;
+  --headerbar-border-color: #3a3036;
+  --headerbar-backdrop-color: #120e10;
+  --headerbar-shade-color: rgba(0, 0, 0, 0.36);
+  --headerbar-darker-shade-color: rgba(0, 0, 0, 0.9);
+  --sidebar-bg-color: #120e10;
+  --sidebar-fg-color: #ffffff;
+  --sidebar-backdrop-color: #120e10;
+  --sidebar-border-color: #3a3036;
+  --sidebar-shade-color: rgba(0, 0, 0, 0.25);
+  --secondary-sidebar-bg-color: #0d0a0c;
+  --secondary-sidebar-fg-color: #ffffff;
+  --secondary-sidebar-backdrop-color: #0d0a0c;
+  --secondary-sidebar-border-color: #3a3036;
+  --secondary-sidebar-shade-color: rgba(0, 0, 0, 0.25);
+  --card-bg-color: #1a1418;
+  --card-fg-color: #ffffff;
+  --card-shade-color: rgba(0, 0, 0, 0.36);
+  --dialog-bg-color: #1a1418;
+  --dialog-fg-color: #ffffff;
+  --popover-bg-color: #1a1418;
+  --popover-fg-color: #ffffff;
+  --popover-shade-color: rgba(0, 0, 0, 0.25);
+  --thumbnail-bg-color: #1a1418;
+  --thumbnail-fg-color: #ffffff;
+  --shade-color: rgba(0, 0, 0, 0.36);
+  --scrollbar-outline-color: rgba(0, 0, 0, 0.5);
+}
+
+@define-color accent_color #979fec;
+@define-color accent_bg_color #979fec;
+@define-color accent_fg_color #070506;
+@define-color destructive_color #b37580;
+@define-color destructive_bg_color #b37580;
+@define-color destructive_fg_color #070506;
+@define-color success_color #648ed0;
+@define-color success_bg_color #648ed0;
+@define-color success_fg_color #070506;
+@define-color warning_color #e095b5;
+@define-color warning_bg_color #e095b5;
+@define-color warning_fg_color #070506;
+@define-color error_color #b37580;
+@define-color error_bg_color #b37580;
+@define-color error_fg_color #070506;
+@define-color window_bg_color #120e10;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #070506;
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color #1a1418;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_border_color #3a3036;
+@define-color headerbar_backdrop_color #120e10;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.36);
+@define-color headerbar_darker_shade_color rgba(0, 0, 0, 0.9);
+@define-color sidebar_bg_color #120e10;
+@define-color sidebar_fg_color #ffffff;
+@define-color sidebar_backdrop_color #120e10;
+@define-color sidebar_border_color #3a3036;
+@define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_bg_color #0d0a0c;
+@define-color secondary_sidebar_fg_color #ffffff;
+@define-color secondary_sidebar_backdrop_color #0d0a0c;
+@define-color secondary_sidebar_border_color #3a3036;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color card_bg_color #1a1418;
+@define-color card_fg_color #ffffff;
+@define-color card_shade_color rgba(0, 0, 0, 0.36);
+@define-color dialog_bg_color #1a1418;
+@define-color dialog_fg_color #ffffff;
+@define-color popover_bg_color #1a1418;
+@define-color popover_fg_color #ffffff;
+@define-color popover_shade_color rgba(0, 0, 0, 0.25);
+@define-color thumbnail_bg_color #1a1418;
+@define-color thumbnail_fg_color #ffffff;
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
+
+/* Sélection de texte */
+selection { background-color: alpha(#979fec, 0.35); color: #ffffff; }

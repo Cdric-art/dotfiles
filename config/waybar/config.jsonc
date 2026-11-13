@@ -7,12 +7,12 @@
 
   "modules-left": ["custom/menu", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["image#herdr", "tray", "pulseaudio", "cpu", "memory", "network", "idle_inhibitor", "custom/power"],
+  "modules-right": ["tray", "pulseaudio", "cpu", "memory", "network", "idle_inhibitor", "custom/power"],
 
   "custom/menu": {
-    "format": "",
+    "format": "",
     "tooltip": false,
-    "on-click": "rofi -show drun"
+    "on-click": "wofi --show drun"
   },
 
   "hyprland/window": {
@@ -59,12 +59,6 @@
     "on-click": "playerctl play-pause"
   },
 
-  "image#herdr": {
-    "path": "/home/cdrc/.local/share/icons/hicolor/scalable/apps/herdr-app.svg",
-    "size": 14,
-    "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/herdr.sh"
-  },
 
   "tray": { "icon-size": 14, "spacing": 8 },
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Power menu for Waybar (rofi)
-choice=$(printf '%s\n' "  Lock" "  Log out" "  Reboot" "  Shut down" |
-    rofi -dmenu -i -p "Power:" -theme-str 'listview { lines: 4; }')
+# Power menu for Waybar (wofi)
+choice=$(printf '%s\n' "  Lock" "  Log out" "  Reboot" "  Shut down" |
+    wofi --dmenu -i -p "Power" --lines 5 --width 220 --cache-file /dev/null)
 
 case "$choice" in
     *Lock)        hyprlock ;;

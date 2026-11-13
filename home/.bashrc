@@ -1,6 +1,9 @@
-alias up='sudo eix-sync && sudo emerge -avuDN @world'
-alias clean='sudo emerge -a --depclean && sudo eclean-dist -d'
-alias ins='sudo emerge -av'
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias up='yay -Syu'
+alias clean='sudo pacman -Rns $(pacman -Qdtq) ; yay -Sc'
+alias ins='yay -S'
 
 alias c="clear"
 alias ..="cd .."
