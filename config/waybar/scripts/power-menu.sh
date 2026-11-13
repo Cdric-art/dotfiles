@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Power menu for Waybar (wofi)
 choice=$(printf '%s\n' "  Lock" "  Log out" "  Reboot" "  Shut down" |
-    wofi --dmenu -i -p "Power" --lines 5 --width 220 --cache-file /dev/null)
+    wofi --dmenu -i -p "Power" --height 251 --width 244 --cache-file /dev/null)
 
 case "$choice" in
     *Lock)        hyprlock ;;

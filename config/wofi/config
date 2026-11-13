@@ -1,6 +1,6 @@
 # wofi — repris de l'ancienne config rofi, thème Ghost Pastel (style.css)
-width=300
-lines=10
+width=324
+height=416
 location=center
 allow_images=true
 image_size=16

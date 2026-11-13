@@ -12,7 +12,7 @@ window {
 }
 
 #outer-box {
-  padding: 12px;
+  padding: 0;
 }
 
 #input {
@@ -21,7 +21,7 @@ window {
   border: none;
   border-radius: 0;
   padding: 8px 16px;
-  margin-bottom: 12px;
+  margin: 12px 12px 0 12px;
   box-shadow: none;
   outline: none;
 }
@@ -33,6 +33,10 @@ window {
 
 #inner-box, #scroll {
   background-color: transparent;
+}
+
+#scroll {
+  margin: 12px;
 }
 
 #entry {

@@ -43,7 +43,7 @@ while IFS= read -r line; do
 done <<<"$AIDE"
 
 choice=$(printf '%s' "$rows" | wofi --dmenu --allow-markup -i -p "Arch" \
-	--width 760 --lines 18 --cache-file /dev/null)
+	--width 784 --height 680 --cache-file /dev/null)
 
 cmd=${cmd_of[$choice]}
 [[ -n $cmd ]] || exit 0
