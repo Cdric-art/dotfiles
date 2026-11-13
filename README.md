@@ -2,7 +2,7 @@
 
 Configuration de mon poste **Arch Linux** sous **Hyprland** (config Lua),
 harmonisée avec le thème **[Ghost Pastel](https://omarchytheme.com/themes/ghost-pastel)**
-repris d'Omarchy. Police unique : **Hack Nerd Font**.
+repris d'Omarchy. Police unique : **Iosevka Nerd Font**.
 
 > Ce dépôt a d'abord servi sur Gentoo (oct.–nov. 2026) : les fichiers Portage, dracut,
 > SDDM, rofi, mako, ghostty et herdr sont dans l'historique Git.
@@ -31,7 +31,7 @@ repris d'Omarchy. Police unique : **Hack Nerd Font**.
 | `config/kitty/` | `~/.config/kitty/` | Terminal + thème `ghost.conf` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
-| `config/fastfetch/` | `~/.config/fastfetch/` | Logo Arch |
+| `config/fastfetch/` | `~/.config/fastfetch/` | Logo Arch (`archlinux.png`, affiché par le protocole graphique de kitty) |
 | `config/nvim/` | `~/.config/nvim/` | LazyVim |
 | `config/zed/` | `~/.config/zed/` | Éditeur Zed + thème `themes/ghost.json` |
 | `config/starship.toml` | `~/.config/` | Prompt + profil `claude-code` (status line de Claude Code) |
@@ -55,7 +55,7 @@ sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper hyprpolkitagent hyp
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar wofi kitty btop yazi fastfetch \
   neovim zed zoxide eza lazygit jq wl-clipboard grim slurp playerctl libnotify \
   pipewire pipewire-pulse wireplumber kwallet kwallet-pam dolphin ark firefox \
-  adw-gtk-theme ttf-hack-nerd tuned ly
+  adw-gtk-theme ttf-iosevka-nerd tuned ly
 yay -S kdrive-bin
 ```
 

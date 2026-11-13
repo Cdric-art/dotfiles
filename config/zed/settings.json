@@ -18,9 +18,9 @@
   },
   "autosave": "on_focus_change",
   "vim_mode": true,
-  "ui_font_family": "Hack Nerd Font",
+  "ui_font_family": "Iosevka Nerd Font",
   "buffer_line_height": "standard",
-  "buffer_font_family": "Hack Nerd Font Mono",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,

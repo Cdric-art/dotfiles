@@ -137,7 +137,7 @@ ColorScheme=Ghost
 XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=none
-font=Hack Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+font=Iosevka Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
 
 [Icons]
 Theme=Tela
