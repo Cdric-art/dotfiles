@@ -33,7 +33,7 @@ repris d'Omarchy. Police unique : **Hack Nerd Font**.
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
 | `config/fastfetch/` | `~/.config/fastfetch/` | Logo Arch |
 | `config/nvim/` | `~/.config/nvim/` | LazyVim |
-| `config/zed/` | `~/.config/zed/` | Éditeur Zed |
+| `config/zed/` | `~/.config/zed/` | Éditeur Zed + thème `themes/ghost.json` |
 | `config/starship.toml` | `~/.config/` | Prompt + profil `claude-code` (status line de Claude Code) |
 | `claude/statusline.sh` | `~/.claude/` | Status line de Claude Code : starship + niveau d'effort |
 | `config/git/` | `~/.config/git/` | Alias et réglages Git (section `[user]` retirée) |
