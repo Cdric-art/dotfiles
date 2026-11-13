@@ -12,11 +12,11 @@
   "logo": {
     "type": "kitty-direct",
     "source": "~/.config/fastfetch/archlinux.png",
-    "width": 36,
+    "width": 42,
     "padding": {
-      "top": 2,
+      "top": 4,
       "right": 4,
-      "left": 2
+      "left": 4
     }
   },
   "display": {
