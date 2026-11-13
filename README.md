@@ -26,6 +26,7 @@ repris d'Omarchy. Police unique : **Hack Nerd Font**.
 | `home/` | `~/` | `.bashrc` (alias `up`/`clean`/`ins` avec yay), `.gtkrc-2.0` |
 | `config/hypr/` | `~/.config/hypr/` | Hyprland (config Lua, layout dwindle), hyprlock (capture du bureau floutée), hypridle, hyprpaper |
 | `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu d'alimentation wofi |
+| `config/dunst/` | `~/.config/dunst/` | Notifications (thème Ghost, repris de mako) |
 | `config/wofi/` | `~/.config/wofi/` | Lanceur (`Super+Espace`) + thème Ghost (`style.css`) |
 | `config/kitty/` | `~/.config/kitty/` | Terminal + thème `ghost.conf` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
@@ -50,7 +51,7 @@ repris d'Omarchy. Police unique : **Hack Nerd Font**.
 Paquets (dépôts officiels + AUR via `yay`) :
 
 ```sh
-sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper hyprpolkitagent hyprshot \
+sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper hyprpolkitagent hyprshot dunst \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar wofi kitty btop yazi fastfetch \
   neovim zed zoxide eza lazygit jq wl-clipboard grim slurp playerctl libnotify \
   pipewire pipewire-pulse wireplumber kwallet kwallet-pam dolphin ark firefox \
@@ -85,12 +86,15 @@ gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 
 - Connexion par **Ly** (`ly@tty1`). Son fichier PAM (`/etc/pam.d/ly`) appelle déjà
   `pam_kwallet5` : avec `kwallet-pam` installé, KWallet est déverrouillé au login
-  (kDrive y garde son jeton). Ne pas installer `gnome-keyring` en parallèle : les deux
+  (kDrive y garde son jeton) une fois que `pam_kwallet_init` (lancé par `hyprland.lua`)
+  lui a transmis l'environnement de la session. Sa sortie va dans le journal :
+  `journalctl -b -t pam_kwallet_init`. kDrive attend que `org.freedesktop.secrets`
+  soit disponible avant de démarrer. Ne pas installer `gnome-keyring` en parallèle : les deux
   se disputent `org.freedesktop.secrets` et kDrive perd sa connexion.
 - Hyprland ne lit pas `~/.config/autostart` : tout est lancé depuis le bloc
   `hyprland.start` de `hyprland.lua` (Waybar, hyprpaper, hypridle, hyprpolkitagent,
   `pam_kwallet_init`, kDrive).
-- Notifications : système intégré à Hyprland (pas de mako).
+- Notifications : **dunst** (activé par D-Bus, thème Ghost dans `config/dunst/dunstrc`).
 - `~/.local/bin` n'est pas dans le `PATH` de Hyprland ni de Waybar : chemins complets
   dans les raccourcis et modules.
 - Raccourcis de workspaces en keycodes (`code:10`…`code:14`) pour fonctionner en AZERTY.

@@ -51,9 +51,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	-- Déverrouille KWallet avec le mot de passe de session (PAM, paquet kwallet-pam)
-	hl.exec_cmd("[ -x /usr/lib/pam_kwallet_init ] && /usr/lib/pam_kwallet_init")
-	-- kDrive (AUR kdrive-bin) : attend que la Waybar (tray) soit prête
-	hl.exec_cmd("sleep 5 && kDrive")
+	-- (sortie dans le journal : journalctl -b -t pam_kwallet_init)
+	hl.exec_cmd("systemd-cat -t pam_kwallet_init sh -x /usr/lib/pam_kwallet_init")
+	-- kDrive (AUR kdrive-bin) : attend la Waybar (tray) et le service de secrets (KWallet, max 30 s)
+	hl.exec_cmd("sleep 5; for i in $(seq 30); do busctl --user list | grep -q org.freedesktop.secrets && break; sleep 1; done; kDrive")
 end)
 
 -------------------------------

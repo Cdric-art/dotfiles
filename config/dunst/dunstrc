@@ -1,0 +1,82 @@
+# dunst — thème Ghost Pastel (https://omarchytheme.com/themes/ghost-pastel)
+# Repris de l'ancienne config mako de Gentoo.
+
+[global]
+    monitor = 0
+    follow = mouse
+    origin = top-right
+    offset = (10, 10)
+    layer = overlay
+
+    width = 360
+    height = (0, 150)
+    notification_limit = 5
+    gap_size = 6
+
+    # Barre de progression (notify-send -h int:value:42)
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 0
+    progress_bar_corner_radius = 0
+    progress_bar_min_width = 340
+    progress_bar_max_width = 340
+    highlight = "#979fec"
+
+    padding = 10
+    horizontal_padding = 10
+    text_icon_padding = 10
+    frame_width = 1
+    corner_radius = 0
+    separator_height = 1
+    separator_color = frame
+    sort = yes
+
+    font = Hack Nerd Font 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    enable_recursive_icon_lookup = true
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 32
+
+    sticky_history = yes
+    history_length = 20
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    ignore_dbusclose = false
+
+    # Clic gauche : action par défaut puis fermeture ; clic milieu : tout fermer ; clic droit : fermer
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[urgency_low]
+    background = "#070506"
+    foreground = "#c3cef2"
+    frame_color = "#836f79"
+    timeout = 5
+
+[urgency_normal]
+    background = "#070506"
+    foreground = "#ffffff"
+    frame_color = "#979fec"
+    timeout = 5
+
+[urgency_critical]
+    background = "#070506"
+    foreground = "#ffffff"
+    frame_color = "#b37580"
+    highlight = "#b37580"
+    timeout = 0
