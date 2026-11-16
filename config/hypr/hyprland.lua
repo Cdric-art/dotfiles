@@ -64,6 +64,8 @@ end)
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "24")
+-- Applis Qt (Dolphin…) : palette Ghost dès le démarrage via qt6ct (~/.config/qt6ct)
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("HYPRCURSOR_SIZE", "24")
 
 -----------------------

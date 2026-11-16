@@ -38,6 +38,7 @@ repris d'Omarchy. Police unique : **Iosevka Nerd Font**.
 | `claude/statusline.sh` | `~/.claude/` | Status line de Claude Code : starship + niveau d'effort |
 | `config/git/` | `~/.config/git/` | Alias et réglages Git (section `[user]` retirée) |
 | `config/gtk-3.0/`, `config/gtk-4.0/` | `~/.config/` | Couleurs Ghost pour libadwaita (GTK4) et adw-gtk3 (GTK3) |
+| `config/qt6ct/` | `~/.config/qt6ct/` | Palette Ghost pour les applis Qt (`QT_QPA_PLATFORMTHEME=qt6ct`), icônes Breeze sombres |
 | `config/kdeglobals`, `dolphinrc` | `~/.config/` | Dolphin en Ghost |
 | `config/mimeapps.list` | `~/.config/` | Firefox par défaut |
 | `config/environment.d/` | `~/.config/` | `SSH_AUTH_SOCK` pour l'agent SSH de systemd |
@@ -55,7 +56,7 @@ sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper hyprpolkitagent hyp
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar wofi kitty btop yazi fastfetch \
   neovim zed zoxide eza lazygit jq wl-clipboard grim slurp playerctl libnotify \
   pipewire pipewire-pulse wireplumber kwallet kwallet-pam dolphin ark firefox \
-  adw-gtk-theme ttf-iosevka-nerd tuned ly
+  adw-gtk-theme qt6ct ttf-iosevka-nerd tuned ly
 yay -S kdrive-bin
 ```
 
@@ -103,8 +104,11 @@ gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 
 `gtk.css` redéfinit les couleurs nommées de libadwaita (variables CSS `--accent-bg-color`…
 en GTK4, `@define-color` en GTK3). En GTK3, seul le thème **adw-gtk3** (`adw-gtk-theme`)
-lit ces couleurs. Les applis Qt hors KDE gardent leur style par défaut (pas de
-`plasma-integration`).
+lit ces couleurs.
+
+Côté Qt, pas de `plasma-integration` : **qt6ct** fournit la palette Ghost dès le
+démarrage (`config/qt6ct/colors/Ghost.conf`). Sans lui, Dolphin applique son jeu de
+couleurs trop tard et les noms de fichiers restent noirs sur fond noir.
 
 ## Captures d'écran
 
