@@ -1,0 +1,18 @@
+# Ghostty — mêmes réglages que kitty, thème Ghost Pastel (themes/Ghost)
+theme = Ghost
+
+font-family = "Iosevka Nerd Font Mono"
+font-size = 11
+
+# Comme kitty : pas de marge intérieure, fond opaque
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+background-opacity = 1
+
+# Pas de barre de titre (comme kitty sous Hyprland) ; onglets aux couleurs du thème
+window-decoration = none
+window-theme = ghostty
+
+# Pas de confirmation à la fermeture (comme kitty)
+confirm-close-surface = false

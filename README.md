@@ -5,7 +5,7 @@ harmonisée avec le thème **[Ghost Pastel](https://omarchytheme.com/themes/ghos
 repris d'Omarchy. Police unique : **Iosevka Nerd Font**.
 
 > Ce dépôt a d'abord servi sur Gentoo (oct.–nov. 2026) : les fichiers Portage, dracut,
-> SDDM, rofi, mako, ghostty et herdr sont dans l'historique Git.
+> SDDM, rofi, mako et herdr sont dans l'historique Git.
 
 ## Palette
 
@@ -28,7 +28,8 @@ repris d'Omarchy. Police unique : **Iosevka Nerd Font**.
 | `config/waybar/` | `~/.config/waybar/` | Barre (disposition Omarchy) + menu d'alimentation wofi |
 | `config/dunst/` | `~/.config/dunst/` | Notifications (thème Ghost, repris de mako) |
 | `config/wofi/` | `~/.config/wofi/` | Lanceur (`Super+Espace`) + thème Ghost (`style.css`) |
-| `config/kitty/` | `~/.config/kitty/` | Terminal + thème `ghost.conf` |
+| `config/kitty/` | `~/.config/kitty/` | Terminal par défaut + thème `ghost.conf` |
+| `config/ghostty/` | `~/.config/ghostty/` | Terminal secondaire, mêmes réglages que kitty + thème `themes/Ghost` |
 | `config/btop/` | `~/.config/btop/` | Moniteur système + thème Ghost |
 | `config/yazi/` | `~/.config/yazi/` | Gestionnaire de fichiers + flavor `ghost.yazi` |
 | `config/fastfetch/` | `~/.config/fastfetch/` | Logo Arch (`archlinux.png`, affiché par le protocole graphique de kitty) |
@@ -53,7 +54,7 @@ Paquets (dépôts officiels + AUR via `yay`) :
 
 ```sh
 sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper hyprpolkitagent hyprshot dunst \
-  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar wofi kitty btop yazi fastfetch \
+  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar wofi kitty ghostty btop yazi fastfetch \
   neovim zed zoxide eza lazygit jq wl-clipboard grim slurp playerctl libnotify \
   pipewire pipewire-pulse wireplumber kwallet kwallet-pam dolphin ark firefox \
   adw-gtk-theme qt6ct ttf-iosevka-nerd tuned ly
